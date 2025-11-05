@@ -18,7 +18,7 @@ It integrates **Google / Firebase authentication**, issues **stateless JWTs**, a
 
 If you’d like to learn more about the tests, proceed to the **Quality Assurance** page using the button below.
 
-[![Open QA Page](https://img.shields.io/badge/Quality%20Assurance-Open-blue?style=for-the-badge)](quality_assurance.md)
+[![Open QA Page](https://img.shields.io/badge/Quality%20Assurance-Open-blue?style=for-the-badge)](Quality_Assurance.md)
 
 ---
 
