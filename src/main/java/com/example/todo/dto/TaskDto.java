@@ -14,15 +14,15 @@ public class TaskDto {
     public String description;
     public String category;
     public String priority;        // "High" | "Medium" | "Low"
-    public OffsetDateTime dueDate; // <== фронтовое имя
-    public Boolean completed;      // <== фронт
-    public String status;          // "TODO"  | "DONE" (для дебага/фильтров)
+    public OffsetDateTime dueDate;
+    public Boolean completed;
+    public String status;          // "TODO"  | "DONE"
     public List<String> tags;
     public String source;
     public Map<String,Object> metadata;
     public UUID ownerId;
     public String ownerEmail;
     public Integer version;
-    public OffsetDateTime createdAt;  // фронт показывает
+    public OffsetDateTime createdAt;
     public OffsetDateTime updatedAt;
 }

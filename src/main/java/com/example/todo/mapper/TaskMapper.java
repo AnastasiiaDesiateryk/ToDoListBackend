@@ -20,7 +20,7 @@ public interface TaskMapper {
     @Mapping(target = "priority", expression = "java(toUiPriority(entity.getPriority()))")
     @Mapping(target = "completed", expression = "java(toUiCompleted(entity.getStatus()))")
     @Mapping(target = "ownerId", source = "owner.id")
-    @Mapping(target = "ownerEmail", source = "owner.email") // 👈 это новенькое
+    @Mapping(target = "ownerEmail", source = "owner.email")
     @Mapping(target = "status", expression = "java(entity.getStatus() == null ? null : entity.getStatus().name())")
     @Mapping(target = "metadata", source = "metadata", qualifiedByName = "jsonToMap")
     TaskDto toDto(Task entity);
@@ -31,7 +31,7 @@ public interface TaskMapper {
     @Mapping(target = "status", expression = "java(toDbStatus(dto.completed))")
     @Mapping(target = "metadata", source = "metadata", qualifiedByName = "mapToJson")
 
-    // служебные поля — игнор
+
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "owner", ignore = true)
     @Mapping(target = "version", ignore = true)
@@ -56,7 +56,7 @@ public interface TaskMapper {
     @Mapping(target = "updatedAt", ignore = true)
     void updateFromPatch(TaskPatchDto patch, @MappingTarget Task entity);
 
-    // ===== Приоритеты =====
+
     default String toUiPriority(TaskPriority p) {
         if (p == null) return "Medium";
         return switch (p) { case HIGH -> "High"; case LOW -> "Low"; default -> "Medium"; };
@@ -66,7 +66,7 @@ public interface TaskMapper {
         return switch (ui.toLowerCase()) { case "high" -> TaskPriority.HIGH; case "low" -> TaskPriority.LOW; default -> TaskPriority.MED; };
     }
 
-    // ===== Статус / completed =====
+    // =====  completed =====
     default Boolean toUiCompleted(TaskStatus s) { return s != null && s == TaskStatus.DONE; }
     default TaskStatus toDbStatus(Boolean completed) { return completed != null && completed ? TaskStatus.DONE : TaskStatus.TODO; }
 

@@ -1,0 +1,28 @@
+# Firebase Admin SDK
+/secrets/
+
+# macOS
+.DS_Store
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Maven
+target/
+!src/main/resources/
+
+# Logs and temp files
+*.log
+*.tmp
+*.pid
+
+# Env / credentials
+.env
+cookies.txt
+idtoken.txt
+
+# Docker / build cache
+docker/
+*.local

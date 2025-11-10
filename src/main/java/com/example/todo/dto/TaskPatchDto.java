@@ -12,8 +12,8 @@ public class TaskPatchDto {
     public String description;
     public String category;
     public String priority;           // "High" | "Medium" | "Low"
-    public OffsetDateTime dueDate;    // <== как во фронте
-    public Boolean completed;         // <== как во фронте
+    public OffsetDateTime dueDate;
+    public Boolean completed;
     public List<String> tags;
     public String source;
     public Map<String,Object> metadata;
