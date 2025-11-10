@@ -1,0 +1,10 @@
+<project name="todo-app">
+    <body>
+        <menu name="Project Reports">
+            <item name="Surefire (Tests)" href="surefire-report.html"/>
+            <item name="PMD" href="pmd.html"/>
+            <item name="JaCoCo Coverage" href="jacoco/index.html"/>
+            <item name="CycloneDX SBOM (JSON)" href="../bom.json"/>
+        </menu>
+    </body>
+</project>
