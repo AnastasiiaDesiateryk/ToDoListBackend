@@ -1,5 +1,6 @@
 server:
-  port: 8080
+  port: ${PORT:8080}
+#  port: 8080
   forward-headers-strategy: framework
 
 spring:
@@ -28,9 +29,6 @@ management:
         include: health,info,metrics
   endpoint:
     health:
-      additional-paths:
-        readiness: /readyz
-        liveness: /livez
       probes:
         enabled: true
       show-details: never
@@ -44,9 +42,11 @@ management:
         readiness:
           enabled: true
           include: "*"
+          additional-path: /readyz
         liveness:
           enabled: true
           include: "*"
+          additional-path: /livez
 
 jwt:
   issuer: ${JWT_ISSUER:todo-app}
