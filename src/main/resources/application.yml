@@ -32,6 +32,14 @@ management:
       probes:
         enabled: true
       show-details: never
+
+      status:
+        http-mapping:
+          UP: 200
+          DOWN: 503
+          OUT_OF_SERVICE: 503
+          UNKNOWN: 500
+
       group:
         readiness:
           enabled: true
@@ -66,3 +74,5 @@ logging:
   level:
     org.hibernate: DEBUG
     org.hibernate.type: TRACE
+    org.springframework.boot.context.config: DEBUG
+    org.springframework.boot.context.properties.bind: DEBUG
