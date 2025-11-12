@@ -26,29 +26,27 @@ management:
     web:
       exposure:
         include: health,info,metrics
-#        include: "*"
   endpoint:
     health:
+      additional-paths:
+        readiness: /readyz
+        liveness: /livez
       probes:
         enabled: true
       show-details: never
-
       status:
         http-mapping:
           UP: 200
           DOWN: 503
           OUT_OF_SERVICE: 503
           UNKNOWN: 500
-
       group:
         readiness:
           enabled: true
           include: "*"
-          additional-path: /readyz
         liveness:
           enabled: true
           include: "*"
-          additional-path: /livez
 
 jwt:
   issuer: ${JWT_ISSUER:todo-app}
